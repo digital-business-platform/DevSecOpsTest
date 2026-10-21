@@ -1,0 +1,100 @@
+{
+  "info": {
+    "name": "MSIL Appointment Service Java 21",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8081"
+    },
+    {
+      "key": "appointmentId",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "1 Create Appointment",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.collectionVariables.set('appointmentId', pm.response.json().id);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"customerName\": \"Neeraj Singh\",\n  \"contactNumber\": \"9999999999\",\n  \"registrationNumber\": \"UP14AB1234\",\n  \"pickupLocation\": \"Noida\",\n  \"pickupDate\": \"2026-10-21\",\n  \"pickupTime\": \"10:00:00\",\n  \"dropLocation\": \"MSIL Dealer\",\n  \"customerConcerns\": \"Periodic service\"\n}"
+        },
+        "url": "{{baseUrl}}/api/v1/appointments"
+      }
+    },
+    {
+      "name": "2 Get Appointment",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/v1/appointments/{{appointmentId}}"
+      }
+    },
+    {
+      "name": "3 List Appointments",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/v1/appointments?page=0&size=20"
+      }
+    },
+    {
+      "name": "4 Update Appointment",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"customerName\": \"Neeraj Singh\",\n  \"contactNumber\": \"9999999999\",\n  \"pickupLocation\": \"Noida Sector 62\",\n  \"pickupDate\": \"2026-10-22\",\n  \"pickupTime\": \"11:00:00\",\n  \"dropLocation\": \"MSIL Dealer Noida\",\n  \"customerConcerns\": \"Periodic service and brake check\",\n  \"status\": \"PENDING_ASSIGNMENT\"\n}"
+        },
+        "url": "{{baseUrl}}/api/v1/appointments/{{appointmentId}}"
+      }
+    },
+    {
+      "name": "5 Assign Driver",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"driverId\": \"11111111-1111-1111-1111-111111111111\"\n}"
+        },
+        "url": "{{baseUrl}}/api/v1/appointments/{{appointmentId}}/driver"
+      }
+    },
+    {
+      "name": "6 Delete Appointment",
+      "request": {
+        "method": "DELETE",
+        "url": "{{baseUrl}}/api/v1/appointments/{{appointmentId}}"
+      }
+    }
+  ]
+}
