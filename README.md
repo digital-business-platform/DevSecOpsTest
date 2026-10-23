@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # MSIL Appointment Service
 
 Production-style Java 21 and Spring Boot 3.5.7 appointment microservice with Controller, Service, ServiceImpl, Repository, Entity/POJO, DTOs, Mapper, Exceptions, Swagger, H2, PostgreSQL driver, tests, Docker, and Postman collection.
@@ -29,4 +30,6 @@ Import `postman/MSIL-Appointment-Service.postman_collection.json` and execute re
 
 ## PostgreSQL
 The PostgreSQL JDBC driver is included. For deployment, replace the H2 datasource URL, username and password with environment-specific PostgreSQL configuration.
+=======
+>>>>>>> 68c3a3022d69fdee528c306e077cfbb4ae821865
 # DevSecOpsTest 
