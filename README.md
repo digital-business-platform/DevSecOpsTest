@@ -28,6 +28,7 @@ Import `postman/MSIL-Appointment-Service.postman_collection.json` and execute re
 - PATCH `/api/v1/appointments/{id}/driver`
 - DELETE `/api/v1/appointments/{id}`
 
+
 ## PostgreSQL
 The PostgreSQL JDBC driver is included. For deployment, replace the H2 datasource URL, username and password with environment-specific PostgreSQL configuration.
 =======
