@@ -35,8 +35,4 @@ Import `postman/MSIL-Appointment-Service.postman_collection.json` and execute re
 
 The PostgreSQL JDBC driver is included. For deployment, replace the H2 datasource URL, username and password with environment-specific PostgreSQL configuration just for testing.
 
-## DeveloperWorkflow feature --> Tushar demo
-
-# DevSecOpsTest4
-
-# DevSecOpsTest test2
+## DeveloperWorkflow feature -->Chand demo  test
